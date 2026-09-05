@@ -1,3 +1,59 @@
+Edit
+Edit
+can you make the site look lmore like this but without the ai art?
+Edit
+Edit
+Edit
+ok going with this favicon10. can you updagte the main apges using this
+can we use this as inspiration for our art? It's in the public domain
+Edit
+Edit
+can i upload this to the iste or does it need ot be resized with dashes
+
+Download the desktop hero
+
+Download the mobile hero 
+
+also, i'd like a slightly mpore elegant design of our first page. Cna you maek it more brain friendly, beautiful, and accedsbile? add the art where yo ucan to htlp so it also works on mbobile. take you ritme.
+
+Yes — I rebuilt the homepage to feel more elegant, calmer, easier to scan, and more distinctly California, while keeping the structure you liked from the original.
+
+A few of the biggest changes:
+
+the citrus/orchard art is now the main visual anchor instead of the books/coffee graphic
+the header uses favicon10 plus “CCC Tools by Karen Crozer”
+all of the old emoji-style icons are replaced with a consistent set of clean inline SVG icons
+the page now starts with a very simple question: “What are you trying to make easier?”
+project descriptions are shorter and more scannable
+the “work behind the work” idea gets its own focused section
+the About section explains why you build and independently maintain these projects without turning the page into a résumé
+the California art gets a second, quieter crop in the About section
+mobile navigation remains available instead of disappearing
+responsive images automatically use the smaller mobile file
+I added stronger keyboard focus, semantic headings, reduced-motion support, higher-contrast handling, forced-colors support, descriptive links, and mobile-friendly targets
+
+The whole package includes the page, both optimized California images, favicon10 and its browser sizes, and a web manifest.
+
+Download the complete polished site package
+
+Preview/download just the new index.html
+
+One thing I intentionally left for the next pass: the individual project, Accessibility, Privacy, Licensing, and Contact links are still placeholders until we plug in your real URLs.
+
+index.html
+HTML
+ok, i think i'm changing my mind. Can we do an updated home page with just a small image once of the oranges and leave it at that?
+
+Yes — I simplified it so the California artwork is now a small supporting image used exactly once, rather than becoming the visual identity of every section.
+
+The page keeps the elegant typography, accessible SVG icons, favicon10 branding, project cards, and brain-friendly structure, but the text and tools are back in the foreground. On desktop, the orange illustration sits quietly beside the hero copy; on mobile, it drops underneath at a restrained size. The image file is only about 95 KB.
+
+Download the complete updated site
+
+Download just the updated index.html
+
+I think this balance is stronger: California flavor once, then the site gets out of the faculty member’s way. 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -198,8 +254,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr);
-      gap: clamp(2rem, 5vw, 4.6rem);
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      gap: clamp(2rem, 5vw, 4rem);
       align-items: center;
     }
 
@@ -279,33 +335,25 @@
     .trust-row .icon { width: 1.05rem; height: 1.05rem; color: var(--green); }
 
     .hero-figure {
+      width: 100%;
+      max-width: 360px;
+      justify-self: end;
       margin: 0;
-      padding: 10px;
-      border-radius: var(--radius-lg);
+      padding: 7px;
+      border-radius: 22px;
       background: #ffffff;
       border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
 
-    .hero-figure picture,
-    .hero-figure img { width: 100%; }
     .hero-figure img {
+      width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
-      border-radius: 22px;
+      object-position: center;
+      border-radius: 16px;
     }
-
-    .hero-caption {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .8rem .55rem .35rem;
-      color: var(--muted);
-      font-size: .84rem;
-    }
-    .hero-caption strong { color: var(--ink-soft); }
 
     /* Sections */
     section { padding: clamp(3.2rem, 6vw, 5.4rem) 0; }
@@ -527,28 +575,12 @@
     .about-section { background: var(--page); }
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr);
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: start;
     }
-    .about-art {
-      margin: 0;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-    .about-art img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: 12% 50%;
-    }
-    .about-art figcaption {
-      padding: .75rem .9rem;
-      color: var(--muted);
-      font-size: .82rem;
+    .about-copy {
+      max-width: 900px;
     }
     .about-copy p { color: var(--ink-soft); }
     .about-copy .author-line {
@@ -623,9 +655,9 @@
     /* Responsive */
     @media (max-width: 1040px) {
       .header-note { display: none; }
-      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); }
       .hero-copy { max-width: 760px; }
-      .hero-figure { max-width: 850px; }
+      .hero-figure { max-width: 320px; }
       .pathways, .project-grid { grid-template-columns: repeat(2, 1fr); }
       .mission-card { grid-template-columns: 1fr; }
     }
@@ -638,16 +670,19 @@
       .brand-copy strong { font-size: .94rem; }
       .brand-copy span { font-size: .72rem; }
       .hero { padding-top: 2.5rem; }
+      .hero-grid { grid-template-columns: 1fr; }
       h1 { font-size: clamp(3rem, 15vw, 4.8rem); }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .button { width: 100%; }
-      .hero-figure { padding: 7px; border-radius: 22px; }
-      .hero-figure img { border-radius: 16px; }
-      .hero-caption { align-items: flex-start; flex-direction: column; gap: .25rem; }
+      .hero-figure {
+        width: min(100%, 360px);
+        max-width: 360px;
+        justify-self: start;
+        margin-top: .25rem;
+      }
       .pathways, .project-grid, .about-grid, .principles { grid-template-columns: 1fr; }
       .path-card { min-height: 200px; }
       .project-card { min-height: auto; }
-      .about-art img { aspect-ratio: 16 / 9; object-position: 10% 45%; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-links { justify-content: flex-start; }
     }
@@ -667,7 +702,7 @@
     }
 
     @media (forced-colors: active) {
-      .path-card, .project-card, .hero-figure, .about-art, .principle, .transparency-card { border: 1px solid CanvasText; }
+      .path-card, .project-card, .hero-figure, .principle, .transparency-card { border: 1px solid CanvasText; }
       .button { forced-color-adjust: none; }
     }
 
@@ -690,7 +725,7 @@
       header { background: rgba(14, 21, 31, .95); }
       .hero { background: radial-gradient(circle at 8% 15%, rgba(240, 182, 63, .08), transparent 19rem), linear-gradient(180deg, #111a25 0%, #0e151f 100%); }
       .start-section, .mission-section, .transparency-section, footer { background: #111923; }
-      .hero-figure, .about-art, .author-line, .principle { background: #151e2a; }
+      .hero-figure, .author-line, .principle { background: #151e2a; }
       .project-card { background: #151e2a; }
       nav a:hover { background: #1b2634; }
       .transparency-card { background: #2b2419; border-color: #5d4b2f; }
@@ -754,14 +789,9 @@
         </div>
 
         <figure class="hero-figure">
-          <picture>
-            <source media="(max-width: 760px)" srcset="california-citrus-hero-mobile.webp">
-            <img src="california-citrus-hero.webp" width="1600" height="900" fetchpriority="high" decoding="async" alt="California-inspired illustration of oranges and citrus blossoms overlooking orchards, a winding road, blue mountains, and a radiant sun.">
-          </picture>
-          <figcaption class="hero-caption">
-            <strong>California roots. Clearer paths.</strong>
-            <span>Faculty-built tools for the work behind teaching.</span>
-          </figcaption>
+          <img src="california-citrus-small.webp" width="900" height="507"
+               fetchpriority="high" decoding="async"
+               alt="California citrus illustration with oranges, blossoms, rolling hills, a winding road, and a radiant sun.">
         </figure>
       </div>
     </section>
@@ -889,17 +919,9 @@
 
     <section class="about-section" id="about" aria-labelledby="about-heading">
       <div class="wrap about-grid">
-        <figure class="about-art">
-          <picture>
-            <source media="(max-width: 760px)" srcset="california-citrus-hero-mobile.webp">
-            <img src="california-citrus-hero.webp" width="1600" height="900" loading="lazy" decoding="async" alt="">
-          </picture>
-          <figcaption>California-inspired artwork for a California Community College project.</figcaption>
-        </figure>
-
-        <div class="about-copy">
+<div class="about-copy">
           <p class="section-kicker">About the author</p>
-          <h2 id="about-heading">Built from real faculty problems.</h2>
+          <h2 id="about-heading">Why I build these tools.</h2>
           <p>I am Karen Crozer, a California Community College English faculty member who builds independent tools for faculty and students. Most of these projects begin the same way: I am trying to complete a real task, realize the process is harder or more opaque than it needs to be, and start building the resource I wish already existed.</p>
           <p>The projects live at the intersection of teaching, open education, accessibility, data, and responsible uses of AI. The through-line is simple: reduce the hidden labor around good teaching without replacing the human judgment that makes the work meaningful.</p>
 
@@ -945,3 +967,5 @@
   </footer>
 </body>
 </html>
+index.html
+HTML

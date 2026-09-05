@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Faculty Work Made Easier: independent, faculty-built CCC tools for teaching, OER, data, and the work around the classroom.">
-  <meta name="theme-color" content="#fffaf3">
+  <meta name="description" content="Faculty Work Made Easier: independent, faculty-built tools for California Community College faculty.">
+  <meta name="theme-color" content="#fffdf9">
   <meta name="color-scheme" content="light dark">
   <title>Faculty Work Made Easier | CCC Tools by Karen Crozer</title>
 
@@ -17,47 +17,45 @@
   <style>
     :root {
       --ink: #14243d;
-      --ink-soft: #30425f;
-      --muted: #586983;
+      --ink-soft: #334760;
+      --muted: #5d6c7e;
+      --page: #f7f9fb;
       --paper: #fffdf9;
-      --page: #f8fafc;
-      --line: #dce4eb;
-      --line-strong: #c8d3de;
-      --cream: #fff6e8;
-      --sun: #f0b63f;
-      --orange: #c95f25;
-      --green: #356a4b;
-      --blue: #296f9c;
-      --violet: #6553a2;
-      --blue-wash: #eaf5fb;
-      --green-wash: #edf6ec;
-      --orange-wash: #fff0e7;
-      --violet-wash: #f0ecfa;
+      --white: #ffffff;
+      --line: #d9e1e8;
+      --line-strong: #c5d0db;
+      --cream: #fff6e7;
+      --blue-wash: #edf6fb;
+      --green-wash: #eff7ef;
+      --peach-wash: #fff1e9;
+      --violet-wash: #f3effb;
+      --blue: #256b94;
+      --green: #356b4d;
+      --orange: #b95b29;
+      --violet: #62529a;
       --focus: #005fcc;
-      --shadow: 0 16px 48px rgba(20, 36, 61, .09);
-      --shadow-soft: 0 8px 24px rgba(20, 36, 61, .07);
-      --radius-lg: 30px;
-      --radius-md: 20px;
-      --radius-sm: 14px;
-      --max: 1200px;
+      --shadow-soft: 0 8px 26px rgba(20, 36, 61, .07);
+      --radius: 18px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
       background: var(--page);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 1rem;
-      line-height: 1.6;
-      text-rendering: optimizeLegibility;
+      line-height: 1.62;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    img { max-width: 100%; display: block; }
     a { color: inherit; }
-    p { max-width: 72ch; }
+    p { max-width: 70ch; }
 
     a:focus-visible,
     button:focus-visible {
@@ -69,15 +67,16 @@
     .skip-link {
       position: fixed;
       left: 1rem;
-      top: -6rem;
-      z-index: 9999;
-      padding: .8rem 1rem;
-      background: #ffffff;
-      color: #000000;
-      border: 2px solid #000000;
+      top: -7rem;
+      z-index: 1000;
+      padding: .75rem 1rem;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
       border-radius: 8px;
       font-weight: 800;
     }
+
     .skip-link:focus { top: 1rem; }
 
     .wrap {
@@ -86,8 +85,8 @@
     }
 
     .icon {
-      width: 1.55rem;
-      height: 1.55rem;
+      width: 1.35rem;
+      height: 1.35rem;
       flex: 0 0 auto;
       stroke: currentColor;
       stroke-width: 1.9;
@@ -96,155 +95,162 @@
       stroke-linejoin: round;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(220, 228, 235, .9);
-      background: rgba(255, 253, 249, .95);
-      backdrop-filter: blur(14px);
+      background: rgba(255, 253, 249, .97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
     .site-nav {
-      min-height: 76px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     .brand {
-      min-width: 0;
       display: flex;
       align-items: center;
-      gap: .75rem;
+      gap: .72rem;
+      min-width: 0;
       text-decoration: none;
     }
 
     .brand-mark {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      padding: 3px;
-      border-radius: 13px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      box-shadow: 0 4px 12px rgba(20, 36, 61, .07);
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      border: 1px solid #d8c59b;
+      border-radius: 12px;
+      background: var(--cream);
+      color: #674919;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
     }
 
-    .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
-    .brand-copy { min-width: 0; }
+    .brand-copy strong,
+    .brand-copy span { display: block; }
+
     .brand-copy strong {
-      display: block;
-      font-size: 1rem;
-      line-height: 1.15;
-      letter-spacing: -.01em;
+      font-size: .98rem;
+      line-height: 1.18;
     }
+
     .brand-copy span {
-      display: block;
-      margin-top: .18rem;
+      margin-top: .15rem;
       color: var(--muted);
-      font-size: .78rem;
+      font-size: .76rem;
       line-height: 1.2;
     }
 
     nav ul {
       display: flex;
       align-items: center;
-      gap: .25rem;
-      list-style: none;
+      gap: .2rem;
       margin: 0;
       padding: 0;
+      list-style: none;
     }
 
     nav a {
       min-height: 44px;
       display: inline-flex;
       align-items: center;
-      padding: .55rem .72rem;
+      padding: .5rem .68rem;
       border-radius: 10px;
-      text-decoration: none;
-      font-size: .92rem;
-      font-weight: 720;
       color: var(--ink-soft);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 750;
     }
-    nav a:hover { background: #edf2f6; color: var(--ink); }
-    nav a[aria-current="page"] { color: var(--ink); }
 
-    .header-note {
-      min-height: 40px;
+    nav a:hover { background: #eef2f5; }
+
+    .independent {
       display: inline-flex;
       align-items: center;
-      gap: .45rem;
-      padding: .5rem .75rem;
+      min-height: 38px;
+      padding: .45rem .72rem;
+      border: 1px solid #ead9b7;
       border-radius: 999px;
       background: var(--cream);
-      color: #694815;
-      border: 1px solid #ecd7b1;
-      font-size: .82rem;
+      color: #664814;
+      font-size: .79rem;
       font-weight: 800;
       white-space: nowrap;
     }
 
-    /* Hero */
     .hero {
-      padding: clamp(2.8rem, 6vw, 5.5rem) 0 3.4rem;
-      background:
-        radial-gradient(circle at 8% 15%, rgba(240, 182, 63, .13), transparent 19rem),
-        linear-gradient(180deg, #fffdf9 0%, #f8fafc 100%);
+      padding: clamp(3.5rem, 8vw, 6.7rem) 0 clamp(3rem, 6vw, 4.6rem);
+      background: var(--paper);
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 .55rem;
+      color: #315f78;
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .085em;
+      text-transform: uppercase;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: .6rem;
-      margin-bottom: 1.05rem;
-      color: #315e78;
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .09em;
-      text-transform: uppercase;
+      gap: .55rem;
+      margin-bottom: 1rem;
     }
+
     .eyebrow::before {
       content: "";
-      width: 30px;
+      width: 28px;
       height: 2px;
       border-radius: 99px;
       background: var(--orange);
     }
 
-    h1, h2, h3 { margin-top: 0; color: var(--ink); }
+    h1, h2, h3 {
+      margin-top: 0;
+      color: var(--ink);
+    }
+
     h1 {
-      max-width: 10.5ch;
+      max-width: 11ch;
       margin-bottom: 1rem;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.45rem, 7vw, 6.6rem);
-      line-height: .98;
-      letter-spacing: -.055em;
+      font-size: clamp(3.15rem, 7vw, 5.75rem);
+      line-height: .99;
+      letter-spacing: -.05em;
       text-wrap: balance;
     }
 
     .hero-lede {
-      margin: 0 0 1.5rem;
+      max-width: 760px;
+      margin: 0;
       color: var(--ink-soft);
-      font-size: clamp(1.12rem, 2vw, 1.34rem);
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
       line-height: 1.55;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: .75rem;
-      margin: 1.7rem 0 1.8rem;
+      gap: .72rem;
+      margin: 1.7rem 0 1.4rem;
     }
 
     .button {
@@ -252,441 +258,513 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .55rem;
+      gap: .5rem;
       padding: .72rem 1rem;
       border: 2px solid var(--ink);
       border-radius: 999px;
       background: var(--ink);
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
       line-height: 1.2;
     }
-    .button:hover { transform: translateY(-1px); box-shadow: var(--shadow-soft); }
-    .button.secondary { background: transparent; color: var(--ink); }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button:hover { box-shadow: var(--shadow-soft); }
 
     .trust-row {
       display: flex;
       flex-wrap: wrap;
-      gap: .7rem 1rem;
+      gap: .6rem 1rem;
       margin: 0;
       padding: 0;
       list-style: none;
       color: var(--muted);
       font-size: .88rem;
     }
-    .trust-row li { display: flex; align-items: center; gap: .4rem; }
-    .trust-row .icon { width: 1.05rem; height: 1.05rem; color: var(--green); }
 
-    .hero-figure {
-      width: 100%;
-      max-width: 360px;
-      justify-self: end;
-      margin: 0;
-      padding: 7px;
-      border-radius: 22px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
+    .trust-row li {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
     }
 
-    .hero-figure img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 16px;
+    .trust-row .icon {
+      width: 1rem;
+      height: 1rem;
+      color: var(--green);
     }
 
-    /* Sections */
-    section { padding: clamp(3.2rem, 6vw, 5.4rem) 0; }
-    .section-intro { margin-bottom: 1.6rem; }
-    .section-kicker {
-      margin: 0 0 .4rem;
-      color: var(--orange);
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .09em;
-      text-transform: uppercase;
+    section {
+      padding: clamp(3.3rem, 6vw, 5.4rem) 0;
     }
+
+    .section-intro {
+      max-width: 780px;
+      margin-bottom: 1.65rem;
+    }
+
     h2 {
       margin-bottom: .6rem;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4.1vw, 3.3rem);
-      line-height: 1.06;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.08;
       letter-spacing: -.035em;
       text-wrap: balance;
     }
+
     .section-intro > p:last-child {
       margin: 0;
       color: var(--muted);
-      font-size: 1.04rem;
+      font-size: 1.03rem;
     }
 
-    /* Start here */
-    .start-section { background: #ffffff; }
+    .start-section {
+      background: #fff;
+    }
+
     .pathways {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
 
     .path-card {
-      min-height: 230px;
+      min-height: 190px;
       display: flex;
       flex-direction: column;
       padding: 1.3rem;
       border: 1px solid var(--line-strong);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius);
       text-decoration: none;
-      box-shadow: 0 1px 0 rgba(20, 36, 61, .02);
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
     }
+
     .path-card:hover {
-      transform: translateY(-3px);
-      border-color: #aebdcc;
+      transform: translateY(-2px);
+      border-color: #aebdca;
       box-shadow: var(--shadow-soft);
     }
+
     .path-card.data { background: var(--blue-wash); }
     .path-card.oer { background: var(--green-wash); }
-    .path-card.teach { background: var(--orange-wash); }
+    .path-card.teach { background: var(--peach-wash); }
     .path-card.guide { background: var(--violet-wash); }
 
-    .path-icon {
-      width: 48px;
-      height: 48px;
+    .path-top {
+      display: flex;
+      align-items: center;
+      gap: .72rem;
+      margin-bottom: .8rem;
+    }
+
+    .path-icon,
+    .project-icon {
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      margin-bottom: 1.7rem;
-      border: 1px solid rgba(20, 36, 61, .12);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, .78);
+      flex: 0 0 auto;
+      border: 1px solid rgba(20,36,61,.12);
+      border-radius: 12px;
+      background: rgba(255,255,255,.84);
     }
-    .data .path-icon { color: var(--blue); }
-    .oer .path-icon { color: var(--green); }
-    .teach .path-icon { color: var(--orange); }
-    .guide .path-icon { color: var(--violet); }
+
+    .data .path-icon, .project-card.data .project-icon { color: var(--blue); }
+    .oer .path-icon, .project-card.oer .project-icon { color: var(--green); }
+    .teach .path-icon, .project-card.labs .project-icon { color: var(--orange); }
+    .guide .path-icon, .project-card.ai .project-icon { color: var(--violet); }
 
     .path-card h3 {
-      margin-bottom: .45rem;
-      font-size: 1.22rem;
-      line-height: 1.2;
-      letter-spacing: -.02em;
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      letter-spacing: -.018em;
     }
-    .path-card p { margin: 0; color: var(--ink-soft); font-size: .94rem; }
-    .path-card .card-arrow {
+
+    .path-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: .94rem;
+    }
+
+    .card-arrow {
       margin-top: auto;
-      padding-top: 1.1rem;
+      padding-top: 1rem;
       display: inline-flex;
       align-items: center;
       gap: .35rem;
-      font-weight: 830;
-      color: var(--ink);
+      font-size: .91rem;
+      font-weight: 820;
     }
-    .card-arrow .icon { width: 1.1rem; height: 1.1rem; }
 
-    /* Project cards */
+    .card-arrow .icon { width: 1rem; height: 1rem; }
+
     .projects-section { background: var(--page); }
+
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
+
     .project-card {
-      min-height: 310px;
       display: flex;
       flex-direction: column;
-      padding: 1.35rem;
-      background: var(--paper);
+      min-height: 300px;
+      padding: 1.45rem;
       border: 1px solid var(--line);
-      border-top-width: 5px;
-      border-radius: var(--radius-md);
-      box-shadow: 0 5px 18px rgba(20, 36, 61, .045);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(20,36,61,.02);
     }
-    .project-card.data { border-top-color: #75bce1; }
-    .project-card.oer { border-top-color: #8ab782; }
-    .project-card.ai { border-top-color: #e39562; }
-    .project-card.labs { border-top-color: #9c8ed7; }
 
     .project-meta {
       display: flex;
       align-items: center;
-      gap: .7rem;
-      margin-bottom: .85rem;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.05rem;
     }
-    .project-icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-    }
-    .data .project-icon { background: var(--blue-wash); color: var(--blue); }
-    .oer .project-icon { background: var(--green-wash); color: var(--green); }
-    .ai .project-icon { background: var(--orange-wash); color: var(--orange); }
-    .labs .project-icon { background: var(--violet-wash); color: var(--violet); }
 
     .project-tag {
       color: var(--muted);
-      font-size: .72rem;
-      font-weight: 850;
-      letter-spacing: .08em;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .03em;
       text-transform: uppercase;
     }
+
     .project-card h3 {
-      margin-bottom: .4rem;
-      font-size: 1.22rem;
-      line-height: 1.2;
-      letter-spacing: -.02em;
+      margin-bottom: .3rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      letter-spacing: -.025em;
     }
+
     .project-tagline {
-      margin: 0 0 .7rem;
-      color: var(--ink-soft);
-      font-weight: 760;
-      line-height: 1.45;
+      margin: 0 0 .65rem;
+      color: var(--ink);
+      font-weight: 790;
     }
+
     .project-description {
-      margin: 0 0 1rem;
-      color: var(--muted);
-      font-size: .93rem;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: .94rem;
     }
+
     .project-link {
-      min-height: 44px;
       margin-top: auto;
+      padding-top: 1.1rem;
       display: inline-flex;
       align-items: center;
-      gap: .38rem;
-      width: fit-content;
-      color: #174e7a;
-      font-weight: 820;
-      text-underline-offset: .25rem;
+      gap: .4rem;
+      color: var(--ink);
+      font-weight: 830;
+      text-underline-offset: 3px;
     }
-    .project-link .icon { width: 1.05rem; height: 1.05rem; }
 
-    /* Mission */
-    .mission-section { background: #ffffff; }
-    .mission-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
-      gap: 2rem;
-      align-items: center;
-      padding: clamp(1.8rem, 4vw, 3.2rem);
-      border-radius: var(--radius-lg);
+    .project-link .icon { width: 1rem; height: 1rem; }
+
+    .mission-section {
       background: var(--ink);
-      color: #ffffff;
-      overflow: hidden;
-      position: relative;
+      color: #fff;
     }
-    .mission-card::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      top: -100px;
-      width: 300px;
-      height: 300px;
-      border: 38px solid rgba(240, 182, 63, .14);
-      border-radius: 50%;
-      box-shadow: 0 0 0 34px rgba(240, 182, 63, .07), 0 0 0 68px rgba(240, 182, 63, .035);
-    }
-    .mission-copy { position: relative; z-index: 1; }
-    .mission-card h2 { color: #ffffff; margin-bottom: .7rem; }
-    .mission-card p { margin: 0; color: #dbe5ef; font-size: 1.08rem; }
-    .mission-steps {
-      position: relative;
-      z-index: 1;
+
+    .mission-section h2 { color: #fff; }
+
+    .mission-grid {
       display: grid;
-      gap: .7rem;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
     }
+
+    .mission-copy p:last-child {
+      margin-bottom: 0;
+      color: #dbe5ef;
+      font-size: 1.04rem;
+    }
+
+    .mission-steps {
+      display: grid;
+      gap: .8rem;
+    }
+
     .mission-step {
       display: grid;
       grid-template-columns: 34px 1fr;
       gap: .8rem;
-      align-items: center;
-      padding: .75rem .8rem;
-      border: 1px solid rgba(255, 255, 255, .18);
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,.17);
       border-radius: 14px;
-      background: rgba(255, 255, 255, .07);
-    }
-    .mission-step strong { display: block; color: #ffffff; }
-    .mission-step span { display: block; color: #d8e1eb; font-size: .88rem; }
-    .step-number {
-      width: 34px; height: 34px; display: grid; place-items: center;
-      border-radius: 50%; background: #ffffff; color: var(--ink); font-weight: 900;
+      background: rgba(255,255,255,.06);
     }
 
-    /* About */
-    .about-section { background: var(--page); }
+    .step-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .mission-step strong {
+      display: block;
+      margin-bottom: .12rem;
+      color: #fff;
+    }
+
+    .mission-step span:last-child {
+      color: #dbe5ef;
+      font-size: .92rem;
+    }
+
+    .about-section { background: #fff; }
+
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: clamp(2rem, 5vw, 4rem);
       align-items: start;
     }
-    .about-copy {
-      max-width: 900px;
+
+    .about-copy p {
+      margin-top: 0;
+      color: var(--ink-soft);
     }
-    .about-copy p { color: var(--ink-soft); }
-    .about-copy .author-line {
-      display: flex;
-      align-items: center;
-      gap: .7rem;
-      margin: 1.2rem 0;
-      padding: .85rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #ffffff;
+
+    .author-note {
+      margin-top: 1.4rem;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid #d2a13e;
+      background: var(--cream);
+      color: var(--ink-soft);
     }
-    .author-line img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      padding: 2px;
-      border-radius: 12px;
-      background: #ffffff;
-      border: 1px solid var(--line);
+
+    .author-note strong {
+      display: block;
+      color: var(--ink);
     }
-    .author-line strong { display: block; line-height: 1.2; }
-    .author-line span { display: block; margin-top: .15rem; color: var(--muted); font-size: .88rem; }
 
     .principles {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: .8rem;
-      margin-top: 1.4rem;
+      gap: .75rem;
     }
+
     .principle {
-      padding: 1rem;
+      padding: 1rem 1.05rem;
       border: 1px solid var(--line);
-      border-radius: 15px;
-      background: #ffffff;
+      border-radius: 14px;
+      background: var(--page);
     }
-    .principle strong { display: block; margin-bottom: .25rem; }
-    .principle span { display: block; color: var(--muted); font-size: .9rem; }
 
-    /* Transparency */
-    .transparency-section { background: #ffffff; }
-    .transparency-card {
-      padding: 1.35rem 1.5rem;
-      border: 1px solid #e7d7bd;
-      border-left: 5px solid var(--sun);
-      border-radius: 16px;
-      background: #fff8eb;
+    .principle strong {
+      display: block;
+      margin-bottom: .18rem;
     }
-    .transparency-card strong { display: block; margin-bottom: .35rem; }
-    .transparency-card p { margin: 0; color: #5f4a2d; font-size: .94rem; }
 
-    /* Footer */
-    footer {
-      padding: 2rem 0 2.8rem;
-      border-top: 1px solid var(--line);
-      background: #ffffff;
+    .principle span {
       color: var(--muted);
+      font-size: .92rem;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1.5rem;
-      align-items: start;
-    }
-    .footer-brand { display: flex; gap: .7rem; align-items: center; }
-    .footer-brand img { width: 38px; height: 38px; object-fit: contain; }
-    .footer-brand strong { display: block; color: var(--ink); }
-    .footer-brand span { display: block; font-size: .84rem; }
-    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .35rem .9rem; }
-    .footer-links a { min-height: 40px; display: inline-flex; align-items: center; font-weight: 700; color: var(--ink-soft); }
 
-    /* Responsive */
-    @media (max-width: 1040px) {
-      .header-note { display: none; }
-      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); }
-      .hero-copy { max-width: 760px; }
-      .hero-figure { max-width: 320px; }
-      .pathways, .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .mission-card { grid-template-columns: 1fr; }
+    .transparency-section {
+      padding-top: 0;
+      background: #fff;
+    }
+
+    .notice {
+      max-width: 940px;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fafbfc;
+      color: var(--ink-soft);
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: .25rem;
+      color: var(--ink);
+    }
+
+    footer {
+      padding: 1.8rem 0 2.4rem;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.25rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: .8rem 1rem;
+    }
+
+    .footer-links a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .independent { display: none; }
+      .mission-grid,
+      .about-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
-      .site-nav { min-height: 70px; flex-wrap: wrap; padding: .55rem 0 .45rem; }
-      nav { order: 3; width: 100%; border-top: 1px solid var(--line); }
-      nav ul { width: 100%; overflow-x: auto; padding-top: .35rem; scrollbar-width: thin; }
-      nav a { min-height: 40px; white-space: nowrap; padding: .45rem .68rem; }
-      .brand-copy strong { font-size: .94rem; }
-      .brand-copy span { font-size: .72rem; }
-      .hero { padding-top: 2.5rem; }
-      .hero-grid { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(3rem, 15vw, 4.8rem); }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .button { width: 100%; }
-      .hero-figure {
-        width: min(100%, 360px);
-        max-width: 360px;
-        justify-self: start;
-        margin-top: .25rem;
+      .site-nav {
+        min-height: auto;
+        padding: .75rem 0 .55rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
       }
-      .pathways, .project-grid, .about-grid, .principles { grid-template-columns: 1fr; }
-      .path-card { min-height: 200px; }
-      .project-card { min-height: auto; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-links { justify-content: flex-start; }
+
+      .brand { order: 1; }
+      nav {
+        order: 2;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      nav::-webkit-scrollbar { display: none; }
+      nav ul {
+        width: max-content;
+        min-width: 100%;
+      }
+      nav a { padding-inline: .6rem; }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 15vw, 4.6rem);
+      }
+
+      .pathways,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card { min-height: 0; }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        width: min(calc(100% - 1.25rem), var(--max));
+      }
+
+      .brand-copy span { display: none; }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button { width: 100%; }
+
+      .trust-row {
+        display: grid;
+        gap: .45rem;
+      }
+
+      section { padding-block: 3rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
       }
     }
 
-    @media (prefers-contrast: more) {
-      :root { --line: #8a99aa; --line-strong: #68788a; }
-      .path-card, .project-card, .principle { border-width: 2px; }
-    }
-
     @media (forced-colors: active) {
-      .path-card, .project-card, .hero-figure, .principle, .transparency-card { border: 1px solid CanvasText; }
-      .button { forced-color-adjust: none; }
+      .path-card,
+      .project-card,
+      .mission-step,
+      .principle,
+      .notice,
+      .brand-mark {
+        border: 1px solid CanvasText;
+      }
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --ink: #eef4fb;
-        --ink-soft: #d6e0eb;
-        --muted: #b6c2cf;
-        --paper: #151e2a;
-        --page: #0e151f;
-        --line: #344252;
-        --line-strong: #46586b;
-        --cream: #302717;
-        --blue-wash: #16394b;
-        --green-wash: #1f3827;
-        --orange-wash: #472c20;
-        --violet-wash: #30294e;
-        --focus: #ffcf61;
+        --ink: #eaf2f8;
+        --ink-soft: #d3dee8;
+        --muted: #b6c4d0;
+        --page: #0d141d;
+        --paper: #111a25;
+        --white: #111a25;
+        --line: #2c3947;
+        --line-strong: #3a4856;
+        --cream: #2a2418;
+        --blue-wash: #132633;
+        --green-wash: #17291e;
+        --peach-wash: #2c211b;
+        --violet-wash: #231f34;
       }
-      header { background: rgba(14, 21, 31, .95); }
-      .hero { background: radial-gradient(circle at 8% 15%, rgba(240, 182, 63, .08), transparent 19rem), linear-gradient(180deg, #111a25 0%, #0e151f 100%); }
-      .start-section, .mission-section, .transparency-section, footer { background: #111923; }
-      .hero-figure, .author-line, .principle { background: #151e2a; }
-      .project-card { background: #151e2a; }
-      nav a:hover { background: #1b2634; }
-      .transparency-card { background: #2b2419; border-color: #5d4b2f; }
-      .transparency-card p { color: #ead8bc; }
-      .project-link { color: #8ec7ef; }
-      .brand-mark { background: #ffffff; }
-      .footer-brand img { background: #ffffff; border-radius: 8px; }
+
+      header { background: rgba(17,26,37,.97); }
+      nav a:hover { background: #1c2834; }
+      .start-section,
+      .about-section,
+      .transparency-section { background: #111a25; }
+      .project-card,
+      .principle,
+      .notice { background: #131d28; }
+      .path-icon,
+      .project-icon { background: rgba(255,255,255,.05); }
+      .button { background: #eaf2f8; color: #14243d; border-color: #eaf2f8; }
+      .button.secondary { background: transparent; color: #eaf2f8; }
+      footer { background: #111a25; }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="wrap site-nav">
       <a class="brand" href="#top" aria-label="Faculty Work Made Easier home">
-        <span class="brand-mark" aria-hidden="true"><img src="favicon10.png" alt=""></span>
+        <span class="brand-mark" aria-hidden="true">FW</span>
         <span class="brand-copy">
           <strong>Faculty Work Made Easier</strong>
           <span>CCC Tools by Karen Crozer</span>
@@ -702,18 +780,15 @@
         </ul>
       </nav>
 
-      <span class="header-note">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
-        Independent faculty project
-      </span>
+      <span class="independent">Independent faculty project</span>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Independent CCC tools · built by faculty</div>
+      <div class="wrap">
+        <div class="hero-inner">
+          <p class="eyebrow">Independent CCC tools · built by faculty</p>
           <h1 id="hero-title">Faculty work, made easier.</h1>
           <p class="hero-lede">Practical tools for teaching, OER, data, and the everyday work around the classroom—designed to help you get oriented, find what you need, and move forward.</p>
 
@@ -731,12 +806,6 @@
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Human judgment stays central</li>
           </ul>
         </div>
-
-        <figure class="hero-figure">
-          <img src="california-citrus-small.webp" width="900" height="507"
-               fetchpriority="high" decoding="async"
-               alt="California citrus illustration with oranges, blossoms, rolling hills, a winding road, and a radiant sun.">
-        </figure>
       </div>
     </section>
 
@@ -750,37 +819,45 @@
 
         <div class="pathways">
           <a class="path-card data" href="#data-mart-smart">
-            <span class="path-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M4 20V10h4v10M10 20V4h4v16M16 20v-7h4v7M3 20h18"/></svg>
-            </span>
-            <h3>Work With Data</h3>
+            <div class="path-top">
+              <span class="path-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 20V10h4v10M10 20V4h4v16M16 20v-7h4v7M3 20h18"/></svg>
+              </span>
+              <h3>Work With Data</h3>
+            </div>
             <p>Find the right report, compare colleges, and make sense of CCC data.</p>
             <span class="card-arrow">See data tools <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
 
           <a class="path-card oer" href="#oer-picks">
-            <span class="path-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg>
-            </span>
-            <h3>Find Course Materials</h3>
+            <div class="path-top">
+              <span class="path-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg>
+              </span>
+              <h3>Find Course Materials</h3>
+            </div>
             <p>Find OER and ZTC possibilities without beginning with a blank search box.</p>
             <span class="card-arrow">See OER tools <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
 
           <a class="path-card teach" href="#learning-labs">
-            <span class="path-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24"><path d="m14.7 6.3 3 3M4 20l4.5-1 9.9-9.9a2.1 2.1 0 0 0-3-3L5.5 16zM13 20h7"/></svg>
-            </span>
-            <h3>Teach &amp; Design</h3>
+            <div class="path-top">
+              <span class="path-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="m14.7 6.3 3 3M4 20l4.5-1 9.9-9.9a2.1 2.1 0 0 0-3-3L5.5 16zM13 20h7"/></svg>
+              </span>
+              <h3>Teach &amp; Design</h3>
+            </div>
             <p>Use practical labs and scaffolds that make academic moves more visible to students.</p>
             <span class="card-arrow">See teaching tools <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
 
           <a class="path-card guide" href="#promptbook">
-            <span class="path-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
-            </span>
-            <h3>Figure Something Out</h3>
+            <div class="path-top">
+              <span class="path-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+              </span>
+              <h3>Figure Something Out</h3>
+            </div>
             <p>Use guided prompts and tools to turn complicated first-pass work into a clearer next step.</p>
             <span class="card-arrow">See guided tools <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
@@ -805,7 +882,7 @@
             <h3>Data Mart Smart</h3>
             <p class="project-tagline">CCC data without the scavenger hunt.</p>
             <p class="project-description">Start with your question, find the right Data Mart report, and understand what the fields are telling you.</p>
-            <a class="project-link" href="#">Explore Data Mart Smart <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="project-link" href="https://drkarebear.github.io/data-mart-smart/">Explore Data Mart Smart <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
 
           <article class="project-card oer" id="oer-picks">
@@ -845,17 +922,25 @@
     </section>
 
     <section class="mission-section" aria-labelledby="mission-heading">
-      <div class="wrap">
-        <div class="mission-card">
-          <div class="mission-copy">
-            <p class="section-kicker" style="color:#f5c968">The work behind the work</p>
-            <h2 id="mission-heading">Good teaching comes with a lot of invisible labor.</h2>
-            <p>Searching, decoding, comparing, troubleshooting, translating institutional language, and rebuilding resources all take time. These projects try to make that work smaller and the next move clearer.</p>
+      <div class="wrap mission-grid">
+        <div class="mission-copy">
+          <p class="section-kicker" style="color:#f2cc7a">The work behind the work</p>
+          <h2 id="mission-heading">Good teaching comes with a lot of invisible labor.</h2>
+          <p>Searching, decoding, comparing, troubleshooting, translating institutional language, and rebuilding resources all take time. These projects try to make that work smaller and the next move clearer.</p>
+        </div>
+
+        <div class="mission-steps" aria-label="How the tools help">
+          <div class="mission-step">
+            <span class="step-number">1</span>
+            <span><strong>Find it</strong>Get to the right resource faster.</span>
           </div>
-          <div class="mission-steps" aria-label="How the tools help">
-            <div class="mission-step"><span class="step-number">1</span><div><strong>Find it</strong><span>Get to the right resource faster.</span></div></div>
-            <div class="mission-step"><span class="step-number">2</span><div><strong>Understand it</strong><span>Translate the process into plain language.</span></div></div>
-            <div class="mission-step"><span class="step-number">3</span><div><strong>Use it</strong><span>Move from information to a practical next step.</span></div></div>
+          <div class="mission-step">
+            <span class="step-number">2</span>
+            <span><strong>Understand it</strong>Translate the process into plain language.</span>
+          </div>
+          <div class="mission-step">
+            <span class="step-number">3</span>
+            <span><strong>Use it</strong>Move from information to a practical next step.</span>
           </div>
         </div>
       </div>
@@ -863,49 +948,56 @@
 
     <section class="about-section" id="about" aria-labelledby="about-heading">
       <div class="wrap about-grid">
-<div class="about-copy">
-          <p class="section-kicker">About the author</p>
+        <div class="about-copy">
+          <p class="section-kicker">About the project</p>
           <h2 id="about-heading">Why I build these tools.</h2>
           <p>I am Karen Crozer, a California Community College English faculty member who builds independent tools for faculty and students. Most of these projects begin the same way: I am trying to complete a real task, realize the process is harder or more opaque than it needs to be, and start building the resource I wish already existed.</p>
           <p>The projects live at the intersection of teaching, open education, accessibility, data, and responsible uses of AI. The through-line is simple: reduce the hidden labor around good teaching without replacing the human judgment that makes the work meaningful.</p>
 
-          <div class="author-line">
-            <img src="favicon10.png" alt="">
-            <div><strong>Karen Crozer</strong><span>Creator and independent maintainer of Faculty Work Made Easier</span></div>
+          <div class="author-note">
+            <strong>Karen Crozer</strong>
+            Creator and independent maintainer of Faculty Work Made Easier
           </div>
+        </div>
 
-          <div class="principles" aria-label="Project principles">
-            <div class="principle"><strong>Useful before impressive</strong><span>Make the next step clearer, not the tool more complicated.</span></div>
-            <div class="principle"><strong>Human judgment stays central</strong><span>AI can support first-pass work; people make consequential decisions.</span></div>
-            <div class="principle"><strong>Accessibility is part of design</strong><span>Keyboard access, clear structure, readable contrast, responsive reflow, and plain language are built in.</span></div>
-            <div class="principle"><strong>Corrections are welcome</strong><span>Independent resources improve when people can point out errors, broken links, and barriers.</span></div>
+        <div class="principles" aria-label="Project principles">
+          <div class="principle">
+            <strong>Useful before impressive</strong>
+            <span>Make the next step clearer, not the tool more complicated.</span>
+          </div>
+          <div class="principle">
+            <strong>Human judgment stays central</strong>
+            <span>AI can support first-pass work; people make consequential decisions.</span>
+          </div>
+          <div class="principle">
+            <strong>Accessibility is part of design</strong>
+            <span>Keyboard access, clear structure, readable contrast, responsive reflow, and plain language are built in.</span>
+          </div>
+          <div class="principle">
+            <strong>Corrections are welcome</strong>
+            <span>Independent resources improve when people can point out errors, broken links, and barriers.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="transparency-section" aria-labelledby="independent-heading">
+    <section class="transparency-section" aria-label="Independent project notice">
       <div class="wrap">
-        <div class="transparency-card">
-          <h2 id="independent-heading" style="font-family:inherit;font-size:1rem;letter-spacing:0;margin:0 0 .35rem;line-height:1.4">Independent project notice</h2>
-          <p>Unless a specific project says otherwise, these resources are independently created and maintained by Karen Crozer. They are not official California Community Colleges Chancellor's Office or Data Mart products and are not funded, sponsored, or endorsed by those offices. Independent resources can contain errors; please verify consequential information with the appropriate authoritative source.</p>
+        <div class="notice">
+          <strong>Independent project notice</strong>
+          Unless a specific project says otherwise, these resources are independently created and maintained by Karen Crozer. They are not official California Community Colleges Chancellor's Office or Data Mart products and are not funded, sponsored, or endorsed by those offices. Independent resources can contain errors; please verify consequential information with the appropriate authoritative source.
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-brand">
-        <img src="favicon10.png" alt="">
-        <div><strong>Faculty Work Made Easier</strong><span>Independent CCC tools by Karen Crozer</span></div>
-      </div>
+    <div class="wrap footer-inner">
+      <p>Faculty Work Made Easier · Independent CCC faculty tools</p>
       <div class="footer-links" aria-label="Footer links">
         <a href="#about">About</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Privacy</a>
-        <a href="#">Licensing</a>
-        <a href="#">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#top">Back to top</a>
       </div>
     </div>
   </footer>

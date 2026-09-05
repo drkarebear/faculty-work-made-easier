@@ -1,15 +1,13 @@
-# Faculty Work Made Easier
+# Faculty Work Made Easier — Accessible Hub
 
-Less time figuring it out. More time for what matters.
+A small static GitHub Pages site organized by faculty task rather than repository name.
 
-This package contains the current no-art homepage, the selected `favicon10` icon set, and a WCAG 2.2 AA code-level accessibility audit.
+## Structure
 
-## Publish
+- `/index.html` — main hub
+- `/oer-tools/` — choice page for the two OER/ZTC projects
+- `/student-learning-resources/` — choice page for the two student English resource sets
+- `/styles.css` — shared responsive, dark-mode, and accessibility styles
+- favicon files — generated from the selected `favicon10` path-and-sun mark
 
-Upload the contents of this folder to the root of the `faculty-work-made-easier` GitHub Pages repository.
-
-## Important
-
-`index.html` intentionally uses no decorative image artwork. The selected path-and-sun artwork is used only for browser/app icons.
-
-See `ACCESSIBILITY-AUDIT.md` for the audit and remaining verification steps.
+Upload the contents of this ZIP to the root of the `faculty-work-made-easier` repository.
